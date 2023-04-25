@@ -173,16 +173,47 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
+~~~
+NAME:V.A.JITHENDRA
+REG.NO:212221230043
+~~~
+~~~
+#include "main.h"
+#include "lcd.h"
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+  	  Lcd_PortType ports[]={GPIOA,GPIOA,GPIOA,GPIOA};
+  	  Lcd_PinType pins[]={GPIO_PIN_3,GPIO_PIN_2,GPIO_PIN_1,GPIO_PIN_0};
+  	  Lcd_HandleTypeDef lcd;
+  	  lcd=Lcd_create(ports,pins,GPIOB,GPIO_PIN_0,GPIOB,GPIO_PIN_1,LCD_4_BIT_MODE);
+  	  Lcd_cursor(&lcd,0,1);
+  	  Lcd_string(&lcd,"DEPT - AIDS");
+  while (1)
+  {
+    	Lcd_cursor(&lcd,1,1);
+    	  	  Lcd_string(&lcd,"JITHENDRA");
+  }
+}
 
-
+~~~
 
 
 ## Output screen shots of proteus  :
- 
+ ## LED OFF CONDITION
+ ![image](https://user-images.githubusercontent.com/94226297/234249437-3d616cfc-142d-4fe3-ba4b-e884ff0535d6.png)
+## LED ON CONDITION
+![image](https://user-images.githubusercontent.com/94226297/234249549-d359b0a2-3824-4904-beb6-05dc3e9fae31.png)
+
  
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
  
- 
+ ![image](https://user-images.githubusercontent.com/94226297/234249767-2902259a-beb4-44b4-a753-8c7233f2f72d.png)
+
 ## Result :
 Interfacing a digital output and digital input  with ARM microcontroller are simulated in proteus and the results are verified.
 
